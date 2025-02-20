@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+@theme {
+    --color-brightRed: hsl(12, 88%, 59%);
+    --color-brightRedLight: hsl(12, 88%, 69%);
+    --color-brightRedSupLiht: hsl(12, 88%, 95%);
+    --color-darkBlue: hsl(228, 39%, 23%);
+    --color-darkGrayisBlue: #3D404D;
+    --color-veryDarkBlue: hsl(233, 12%, 13%);
+    --color-veryPaleRed: hsl(13, 100%, 96%);
+    --color-veryLightGray: hsl(0, 0%, 98%);
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-color: hsl(12, 88%, 59%);
+    padding: 15px 25px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    border-radius: 20px;
+    transition: all ease 0.2s;
+    box-shadow: 0px 5px 0px 0px hsl(12, 88%, 69%);
+}
+
+.btn:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px hsl(12, 88%, 69%);
+}
+.btn-white{
+    border: none;
+    outline: none;
+    background-color: white;
+    padding: 15px 25px;
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+    border-radius: 20px;
+    transition: all ease 0.2s;
+    box-shadow: 0px 5px 0px 0px hsl(12, 88%, 69%);
+}
+.btn-white:active{
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px hsl(12, 88%, 69%);
+}
+
+body {
+    background-image: url("/public/img/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: 90% -25%;
+}
+#CTA {
+    background-image: url("/public/img/bg-simplify-section-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 767px) {
+    body {
+        background-size: 600px;
+        background-position: 120% -2%;
+    }
+}
+
+@media (max-width: 580px) {
+    body {
+        background-size: 500px;
+        background-position: 50px -50px;
+    }
+
+    #CTA {
+        background-image: url("/public/img/bg-simplify-section-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+}
+
+/* Humburger Menu */
+.humburger{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.humburger-top ,
+.humburger-middle ,
+.humburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+.humburger-middle {
+    transform: translateY(7px);
+}
+.humburger-bottom {
+    transform: translateY(14px);
+}
+.open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+.open .humburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+.open .humburger-middle {
+    display: none;
+}
+.open .humburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
